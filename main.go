@@ -31,7 +31,9 @@ func main() {
 		fx.Provide(
 			context.Background,
 			config.New,
-			database.New,
+			func(ctx context.Context, cfg *config.Config) (*sql.DB, error) {
+				return database.New(ctx, cfg)
+			},
 			echo.New,
 		),
 		repositories.Module,

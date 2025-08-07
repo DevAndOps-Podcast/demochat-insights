@@ -47,9 +47,9 @@ func (h *Handler) RegisterRoutes(e *echo.Echo) {
 }
 
 func (h *Handler) saveMessage(c echo.Context) error {
-	log.Println("saving message")
 	var req insights.PublishMessageRequest
 	if err := c.Bind(&req); err != nil {
+		log.Println("request not valid", err)
 		return err
 	}
 

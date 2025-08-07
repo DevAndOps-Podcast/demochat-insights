@@ -3,15 +3,13 @@ module demochat-insights
 go 1.21
 
 require (
-	github.com/labstack/echo v3.3.10+incompatible
 	github.com/labstack/echo/v4 v4.11.3
-	github.com/mattn/go-sqlite3 v1.14.30
+	github.com/lib/pq v1.10.9
 	go.uber.org/fx v1.20.1
 	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/labstack/gommon v0.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
