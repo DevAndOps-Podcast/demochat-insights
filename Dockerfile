@@ -21,9 +21,11 @@ FROM alpine:3.22
 RUN apk update
 RUN apk --no-cache add ca-certificates
 
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
 WORKDIR /app
 
 COPY --from=builder /app .
 
-USER nonroot:nonroot
+USER appuser
 ENTRYPOINT ["./app"]
